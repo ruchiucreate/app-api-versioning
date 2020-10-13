@@ -12,7 +12,7 @@ export function* requestApiVersion() {
         if (status === 200) {
             for (let item of data) {
                 if (item.app_version == 1 && item.active == true) {
-                    const result = yield requestApiResult(item.api_version);//
+                    const result = yield requestApiResult(item.api_version);
                     console.log('result saga : ' + JSON.stringify(result))
                     alert(JSON.stringify(result))
                     yield put(getApiResultSuccess(result));

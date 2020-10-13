@@ -58,5 +58,3 @@ buck-out/
 # CocoaPods
 /ios/Pods/
 
-#API URLs
-src/utilities/config.js
