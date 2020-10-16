@@ -11,11 +11,14 @@ export function* requestApiVersion() {
         console.log('ApiVersion data: ' + JSON.stringify(data, null, 2))
         if (status === 200) {
             for (let item of data) {
-                if (item.app_version == 1 && item.active == true) {
+                if (item.app_version == 1.1 && item.active == true) {
                     const result = yield requestApiResult(item.api_version);
                     console.log('result saga : ' + JSON.stringify(result))
                     alert(JSON.stringify(result))
                     yield put(getApiResultSuccess(result));
+                }
+                else {
+                    //show popup to force update the app
                 }
             }
         } else {

@@ -8,7 +8,7 @@ export const getAppLiveVersion = () => {
     getAppstoreAppMetadata(storeSpecificId)
         .then(metadata => {
             //     metadata.currentVersionReleaseDate
-            console.log('metadata.version : ' + metadata.version)
+            console.log('App current live version : ' + metadata.version)
             return metadata.version;
         })
         .catch(err => {
